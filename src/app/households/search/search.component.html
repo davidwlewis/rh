@@ -1,0 +1,6 @@
+<form name="searchForm" #searchForm="ngForm" (ngSubmit)="search(searchForm.value.term)">
+<input type="text" name="term" [(ngModel)]="term"/>
+<input type="button" name="search" value="Search" (click)="search(searchForm.value.term)" />
+</form>
+
+<app-contact-detail *ngFor="let contact of getSortedHits(response | async)" [contact]="contact._source"></app-contact-detail>

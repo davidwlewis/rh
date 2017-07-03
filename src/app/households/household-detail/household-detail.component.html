@@ -1,0 +1,12 @@
+<dl class="dl-horizontal">
+  <dt>Address</dt>
+    <dd>{{household?.address.street}},
+        {{household?.address.suburb}}
+        {{household?.address.postcode}}
+        <span class="text-muted" *ngIf="household?.address?.publicHousing">(PH)</span>
+    </dd>
+  <dt>Adults</dt>
+    <dd>{{household?.adults}}</dd>
+  <dt>Children</dt>
+    <dd>{{household?.children}}</dd>
+</dl>

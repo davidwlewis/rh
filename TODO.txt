@@ -1,0 +1,37 @@
+sort assistance by reverse date in dataservice
+set alert colour when too recent
+
+
+
+if(this.household) {
+  this.ds.editHousehold(this.model);
+  this.contacts.forEach(this.ds.editContact);
+} else {
+  var key = this.ds.addHousehold(this.model);
+
+  this.contacts.forEach(contact => {
+    contact.household = key;
+    this.ds.addContact(contact)
+  });
+}
+
+
+
+new components:
+  contact-add (modal)
+  contact subform (use in household form)
+  household-add
+  household-subform (minor refactor, we largely already deal with edit logic in view component)
+
+rename view to householdview
+remove form-dialog?
+
+search
+ - rename component
+ - change elastic indexing (can we do lookups in that script to grab household detail?)
+ - consider that search might be part of booking workflow. callback?
+
+calendar
+ - workflow first!
+ - orphan contacts
+ - rebook logic

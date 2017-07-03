@@ -1,0 +1,12 @@
+<app-household-detail [household]="household | async"></app-household-detail>
+<h3>Contacts</h3>
+<app-contact-detail *ngFor="let contact of contacts | async" [contact]="contact"></app-contact-detail>
+
+<div class="row">
+<button class="btn btn-primary" name="edit" (click)="editHousehold()">Edit</button>
+<button class="btn btn-primary" name="addContact" (click)="addContact()">Add Contact</button>
+</div>
+<h3>Assistance</h3>
+<app-assistance-form [household]="key"></app-assistance-form>
+<app-assistance-detail *ngFor="let a of assistance | async" [assistance]="a" class="row"></app-assistance-detail>
+<template ngbModalContainer></template>

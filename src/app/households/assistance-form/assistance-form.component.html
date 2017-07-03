@@ -1,0 +1,21 @@
+<form #assistanceForm="ngForm" name="addAssistance" (submit)="onSubmit(assistanceForm)" class="inline-form row">
+  <div class="form-group col-md-2">
+    <input type="mydate" name="date" class="form-control" style="height:33.5px;" [(ngModel)]="model.date"/>
+  </div>
+  <div class="form-group col-md-2">
+    <select name="type" class="form-control" [(ngModel)]="model.type">
+      <option value="Food">Food</option>
+      <option>Clothes</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-group col-md-5">
+    <input type="text" name="comment" class="form-control" [(ngModel)]="model.comment"/>
+  </div>
+  <div class="form-group col-md-2">
+    <input type="text" name="staff" class="form-control" [(ngModel)]="model.staff"/>
+  </div>
+  <div class="form-group col-md-1">
+    <button type="button" class="btn" style="height:33.5px;" (click)="onSubmit(assistanceForm)"><md-icon style="font-size:18px;">add</md-icon></button>
+  </div>
+</form>

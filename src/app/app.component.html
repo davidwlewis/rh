@@ -1,4 +1,34 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="collapseNav = !collapseNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" routerLink="/">RESTORE</a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown" [ngbCollapse]="collapseNav">
+    <ul class="navbar-nav">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/household/add">Households</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/calendar">Calendar</a>
+      </li>
+      <li class="nav-item dropdown" ngbDropdown>
+        <a class="nav-link" id="navbarDropdownMenuLink" ngbDropdownToggle>
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" routerLink="#">Action</a>
+          <a class="dropdown-item" routerLink="#">Another action</a>
+          <a class="dropdown-item" routerLink="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+<div class="container">
 <router-outlet></router-outlet>
+</div>
